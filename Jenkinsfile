@@ -1,14 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10'
-        }
-    }
+    agent any
 
     stages {
-        stage('Preparar entorno') {
+        stage('Instalar dependencias') {
             steps {
-                sh 'python -m venv venv'
+                sh 'python3 -m venv venv'
             }
         }
 
